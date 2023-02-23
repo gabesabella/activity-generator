@@ -1,8 +1,12 @@
 import { type NextPage } from "next";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Icons from "../components/Icons";
-import Nav from "../components/Nav";
+import { FaReact } from "react-icons/fa";
+import { SiTailwindcss, SiTypescript } from "react-icons/si";
+import { RxVercelLogo } from "react-icons/rx";
+import { TbBrandNextjs } from "react-icons/tb";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { IoIosPaper } from "react-icons/Io";
 
 interface Activity {
   activity: string;
@@ -58,7 +62,41 @@ const Home: NextPage = () => {
 
   return (
     <div className="flex h-screen flex-col place-items-center justify-center bg-slate-800 text-slate-100 ">
-      <Nav />
+      <div className="absolute top-0 h-24 w-full">
+        <ul className="flex h-full w-full items-center justify-evenly font-semibold">
+          <a href="https://github.com/gabesabella" className="flex gap-2">
+            <li>Github</li>
+            <AiFillGithub className="text-2xl" />
+          </a>
+
+          <a href="https://github.com/gabesabella" className="flex gap-2">
+            <li>CV</li>
+            <IoIosPaper className="text-2xl" />
+          </a>
+          <a href="https://www.linkedin.com/" className="flex gap-2">
+            <li>LinkedIn</li>
+            <AiFillLinkedin className="text-2xl" />
+          </a>
+        </ul>
+      </div>
+      <div className="absolute bottom-7 flex w-screen justify-evenly text-3xl">
+        <a href="https://reactjs.org/">
+          <FaReact />
+        </a>
+        <a href="https://tailwindcss.com/">
+          <SiTailwindcss />
+        </a>
+        <a href="https://vercel.com/">
+          <RxVercelLogo />
+        </a>
+        <a href="https://www.typescriptlang.org/">
+          <SiTypescript />
+        </a>
+        <a href="https://nextjs.org/">
+          <TbBrandNextjs />
+        </a>
+      </div>
+
       <form
         onSubmit={handleSubmit}
         className="flex flex-col space-y-12 lg:space-y-16 lg:text-2xl"
@@ -114,7 +152,6 @@ const Home: NextPage = () => {
           </h2>
         </div>
       )}
-      <Icons></Icons>
     </div>
   );
 };
