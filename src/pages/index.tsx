@@ -6,7 +6,7 @@ import { SiTailwindcss, SiTypescript } from "react-icons/si";
 import { RxVercelLogo } from "react-icons/rx";
 import { TbBrandNextjs } from "react-icons/tb";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { IoIosPaper } from "react-icons/Io";
+import { IoIosPaper } from "react-icons/io";
 
 interface Activity {
   activity: string;
