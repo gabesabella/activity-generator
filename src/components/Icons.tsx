@@ -1,4 +1,3 @@
-import { FaBeer } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -24,6 +23,9 @@ export default function Icons() {
       </a>
       <a href="https://www.typescriptlang.org/">
         <SiTypescript />
+      </a>
+      <a href="https://nextjs.org/">
+        <TbBrandNextjs />
       </a>
     </div>
   );
