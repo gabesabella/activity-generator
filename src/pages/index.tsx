@@ -99,7 +99,7 @@ const Home: NextPage = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col space-y-12 lg:space-y-16 lg:text-2xl"
+        className="flex flex-col space-y-7 lg:text-2xl"
       >
         <h1 className="text-3xl lg:text-5xl">Bored?</h1>
         <label htmlFor="activity-type" className="font-bold">
