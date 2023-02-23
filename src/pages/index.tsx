@@ -1,8 +1,8 @@
 import { type NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Icons from "../components/Icons";
+import Nav from "../components/Nav";
 
 interface Activity {
   activity: string;
@@ -57,10 +57,16 @@ const Home: NextPage = () => {
   }, [isLoading, activityType, participants]);
 
   return (
-    <div className="flex h-screen flex-col place-items-center justify-center bg-slate-800 text-slate-100">
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
-        <h1 className="text-3xl">Bored? Don't be!</h1>
-        <label htmlFor="activity-type">What kind of activity?</label>
+    <div className="flex h-screen flex-col place-items-center justify-center bg-slate-800 text-slate-100 ">
+      <Nav />
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col space-y-12 lg:space-y-16 lg:text-2xl"
+      >
+        <h1 className="text-3xl lg:text-5xl">Bored?</h1>
+        <label htmlFor="activity-type" className="font-bold">
+          Let's find a random activity to do:
+        </label>
         <select
           className="text-slate-800"
           id="activity-type"
@@ -78,7 +84,9 @@ const Home: NextPage = () => {
           <option value="music">Music</option>
           <option value="busywork">Busy work</option>
         </select>
-        <label htmlFor="participants">Select number of participants:</label>
+        <label htmlFor="participants" className="font-bold">
+          Select number of participants:
+        </label>
         <select
           className="text-slate-800"
           id="participants"
@@ -92,7 +100,7 @@ const Home: NextPage = () => {
           <option value="4">4</option>
         </select>
         <button
-          className="rounded border border-blue-200 bg-transparent py-2 px-4 font-semibold text-blue-200 hover:border-transparent hover:bg-blue-500 hover:text-white"
+          className="rounded border border-blue-200 bg-transparent py-3 px-4 font-semibold text-blue-200 hover:border-transparent hover:bg-blue-500 hover:text-white"
           type="submit"
         >
           Find Activity
@@ -101,11 +109,12 @@ const Home: NextPage = () => {
       {isLoading && <p className="text-xl">Loading...</p>}
       {activityData && (
         <div>
-          <h2 className="block w-96 py-10 text-center text-xl">
-            {activityData.activity}
+          <h2 className="block w-96 py-10 text-center text-2xl">
+            {activityData.activity}!
           </h2>
         </div>
       )}
+      <Icons></Icons>
     </div>
   );
 };
