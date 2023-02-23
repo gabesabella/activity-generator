@@ -135,7 +135,7 @@ const Home: NextPage = () => {
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-          <option value="4">4</option>
+          <option value="4">4 or more</option>
         </select>
         <button
           className="rounded border border-blue-200 bg-transparent py-3 px-4 font-semibold text-blue-200 hover:border-transparent hover:bg-blue-500 hover:text-white"
