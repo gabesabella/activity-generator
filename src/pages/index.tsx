@@ -102,7 +102,7 @@ const Home: NextPage = () => {
         onSubmit={handleSubmit}
         className="flex w-full flex-col space-y-[50px] p-10 lg:max-w-[33%] lg:space-y-[50px] lg:p-0 lg:text-2xl"
       >
-        <h1 className="py-5 font-sans text-3xl font-bold text-blue-200 lg:text-6xl">
+        <h1 className="py-5 font-sans text-3xl font-semibold text-blue-100 lg:text-6xl">
           Bored?
         </h1>
         <div className="flex flex-col space-y-7">
@@ -145,7 +145,7 @@ const Home: NextPage = () => {
           </select>
         </div>
         <button
-          className="rounded border border-blue-200 bg-transparent py-3 px-4 font-sans font-semibold text-blue-200 hover:border-transparent hover:bg-blue-500 hover:text-white"
+          className="rounded  bg-blue-500 py-3 px-4 font-sans font-semibold text-white transition-all duration-300 ease-out   hover:opacity-90"
           type="submit"
         >
           Find Activity
@@ -154,7 +154,7 @@ const Home: NextPage = () => {
       {isLoading && <p className="text-xl">Loading...</p>}
       {activityData && (
         <div>
-          <h2 className="block w-96 py-10 text-center text-2xl lg:py-16">
+          <h2 className="block max-w-[350px] py-10 text-center text-2xl lg:py-16">
             {activityData.activity}!
           </h2>
         </div>
