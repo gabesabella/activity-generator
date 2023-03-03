@@ -61,9 +61,9 @@ const Home: NextPage = () => {
   }, [isLoading, activityType, participants]);
 
   return (
-    <div className="flex h-screen flex-col place-items-center justify-center bg-slate-800 text-slate-100 ">
-      <div className="absolute top-0 h-24 w-full">
-        <ul className="flex h-full w-full items-center justify-evenly font-semibold">
+    <div className="flex h-screen flex-col place-items-center justify-center bg-slate-800 font-mono text-slate-100">
+      <div className="absolute top-0 h-12 w-full">
+        <ul className="flex h-full w-full items-center justify-center space-x-10 font-semibold lg:justify-around lg:space-x-0">
           <a href="https://github.com/gabesabella" className="flex gap-2">
             <li>Github</li>
             <AiFillGithub className="text-2xl" />
@@ -79,66 +79,73 @@ const Home: NextPage = () => {
           </a>
         </ul>
       </div>
-      <div className="absolute bottom-7 flex w-screen justify-evenly text-3xl">
+      <div className="absolute bottom-2 flex justify-center space-x-5 text-2xl lg:space-x-[100px]">
+        <p className="text-lg">Built with:</p>
         <a href="https://reactjs.org/">
           <FaReact />
-        </a>
-        <a href="https://tailwindcss.com/">
-          <SiTailwindcss />
-        </a>
-        <a href="https://vercel.com/">
-          <RxVercelLogo />
         </a>
         <a href="https://www.typescriptlang.org/">
           <SiTypescript />
         </a>
+        <a href="https://tailwindcss.com/">
+          <SiTailwindcss />
+        </a>
         <a href="https://nextjs.org/">
           <TbBrandNextjs />
+        </a>
+        <a href="https://vercel.com/">
+          <RxVercelLogo />
         </a>
       </div>
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col space-y-7 lg:text-2xl"
+        className="flex w-full flex-col space-y-[50px] p-10 lg:max-w-[33%] lg:space-y-[50px] lg:p-0 lg:text-2xl"
       >
-        <h1 className="text-3xl lg:text-5xl">Bored?</h1>
-        <label htmlFor="activity-type" className="font-bold">
-          Let's find a random activity to do:
-        </label>
-        <select
-          className="text-slate-800"
-          id="activity-type"
-          value={activityType}
-          onChange={handleActivityTypeChange}
-        >
-          <option value="">--Please choose an activity type--</option>
-          <option value="education">Education</option>
-          <option value="recreational">Recreational</option>
-          <option value="social">Social</option>
-          <option value="diy">DIY</option>
-          <option value="charity">Charity</option>
-          <option value="cooking">Cooking</option>
-          <option value="relaxation">Relaxation</option>
-          <option value="music">Music</option>
-          <option value="busywork">Busy work</option>
-        </select>
-        <label htmlFor="participants" className="font-bold">
-          Select number of participants:
-        </label>
-        <select
-          className="text-slate-800"
-          id="participants"
-          value={participants}
-          onChange={handleParticipantsChange}
-        >
-          <option value="">--Please choose number of participants--</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4 or more</option>
-        </select>
+        <h1 className="py-5 font-sans text-3xl font-bold text-blue-200 lg:text-6xl">
+          Bored?
+        </h1>
+        <div className="flex flex-col space-y-7">
+          <label htmlFor="activity-type" className="font-sans">
+            Choose a cetegory:
+          </label>
+          <select
+            className="font-sans text-slate-800"
+            id="activity-type"
+            value={activityType}
+            onChange={handleActivityTypeChange}
+          >
+            <option value="">--Please choose an activity type--</option>
+            <option value="education">Education</option>
+            <option value="recreational">Recreational</option>
+            <option value="social">Social</option>
+            <option value="diy">DIY</option>
+            <option value="charity">Charity</option>
+            <option value="cooking">Cooking</option>
+            <option value="relaxation">Relaxation</option>
+            <option value="music">Music</option>
+            <option value="busywork">Busy work</option>
+          </select>
+        </div>
+        <div className="flex flex-col space-y-7">
+          <label htmlFor="participants" className="font-sans">
+            Select number of participants:
+          </label>
+          <select
+            className="font-sans text-slate-800"
+            id="participants"
+            value={participants}
+            onChange={handleParticipantsChange}
+          >
+            <option value="">--Please choose number of participants--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4 or more</option>
+          </select>
+        </div>
         <button
-          className="rounded border border-blue-200 bg-transparent py-3 px-4 font-semibold text-blue-200 hover:border-transparent hover:bg-blue-500 hover:text-white"
+          className="rounded border border-blue-200 bg-transparent py-3 px-4 font-sans font-semibold text-blue-200 hover:border-transparent hover:bg-blue-500 hover:text-white"
           type="submit"
         >
           Find Activity
@@ -147,7 +154,7 @@ const Home: NextPage = () => {
       {isLoading && <p className="text-xl">Loading...</p>}
       {activityData && (
         <div>
-          <h2 className="block w-96 py-10 text-center text-2xl">
+          <h2 className="block w-96 py-10 text-center text-2xl lg:py-16">
             {activityData.activity}!
           </h2>
         </div>
